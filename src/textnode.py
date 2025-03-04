@@ -10,10 +10,10 @@ class TextType(Enum):
     IMAGE = "image"
 
 class TextNode():
-    def __init__(self, text: str, text_type: Enum, url: str) -> None:
+    def __init__(self, text: str, text_type: Enum, url: str | None = None ) -> None:
         self.text: str = text
         self.text_type: Enum = TextType(text_type)
-        self.url: str = url
+        self.url: str | None = url
 
     @override
     def __eq__(self, other):
